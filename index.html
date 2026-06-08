@@ -3,38 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to biology27</title>
+    <title>Biology27 Conference</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Caveat', cursive;
+            background: linear-gradient(135deg, #1a8fa8 0%, #2ba5c4 100%);
+            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
         }
+        
         .container {
             text-align: center;
-            background: white;
-            padding: 50px;
-            border-radius: 10px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            background: rgba(255, 255, 255, 0.95);
+            padding: 60px 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 500px;
         }
+        
+        .logo {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 30px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 300"><path d="M100,20 Q110,30 105,50 Q100,60 95,50 Q90,30 100,20 M80,70 Q70,80 75,100 Q85,105 95,95 Q90,75 80,70 M120,70 Q130,80 125,100 Q115,105 105,95 Q110,75 120,70 M60,120 Q50,130 55,150 Q70,160 85,145 Q75,125 60,120 M140,120 Q150,130 145,150 Q130,160 115,145 Q125,125 140,120 M70,180 Q60,190 65,210 Q80,220 95,205 Q85,185 70,180 M130,180 Q140,190 135,210 Q120,220 105,205 Q115,185 130,180 M90,240 Q85,250 95,260 Q105,250 100,240 Q95,235 90,240" stroke="%231a8fa8" stroke-width="8" fill="none" stroke-linecap="round"/></svg>') center/contain no-repeat;
+        }
+        
         h1 {
-            color: #333;
-            margin: 0 0 10px 0;
+            font-size: 3.5em;
+            color: #1a8fa8;
+            margin-bottom: 40px;
+            font-weight: 700;
+            letter-spacing: 2px;
         }
-        p {
-            color: #666;
-            font-size: 18px;
+        
+        .info {
+            font-size: 2em;
+            color: #333;
+            line-height: 1.8;
+            margin-bottom: 10px;
+        }
+        
+        .info-label {
+            font-weight: 700;
+            color: #1a8fa8;
+        }
+        
+        .tagline {
+            font-size: 2.2em;
+            color: #1a8fa8;
+            margin-top: 40px;
+            font-weight: 700;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Welcome to biology27.ch</h1>
-        <p>Your site is live!</p>
+        <div class="logo"></div>
+        <h1>Biology27</h1>
+        <div class="info">
+            <div><span class="info-label">What:</span> Biology27 conference</div>
+            <div><span class="info-label">Where:</span> Bern</div>
+            <div><span class="info-label">When:</span> February 2027</div>
+        </div>
+        <div class="tagline">Stay tuned!</div>
     </div>
 </body>
 </html>
