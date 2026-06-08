@@ -33,10 +33,15 @@
         }
         
         .logo {
-            width: 150px;
-            height: 150px;
+            width: 200px;
+            height: auto;
             margin: 0 auto 30px;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 300"><path d="M100,20 Q110,30 105,50 Q100,60 95,50 Q90,30 100,20 M80,70 Q70,80 75,100 Q85,105 95,95 Q90,75 80,70 M120,70 Q130,80 125,100 Q115,105 105,95 Q110,75 120,70 M60,120 Q50,130 55,150 Q70,160 85,145 Q75,125 60,120 M140,120 Q150,130 145,150 Q130,160 115,145 Q125,125 140,120 M70,180 Q60,190 65,210 Q80,220 95,205 Q85,185 70,180 M130,180 Q140,190 135,210 Q120,220 105,205 Q115,185 130,180 M90,240 Q85,250 95,260 Q105,250 100,240 Q95,235 90,240" stroke="%231a8fa8" stroke-width="8" fill="none" stroke-linecap="round"/></svg>') center/contain no-repeat;
+        }
+        
+        .logo img {
+            width: 100%;
+            height: auto;
+            display: block;
         }
         
         h1 {
@@ -69,7 +74,9 @@
 </head>
 <body>
     <div class="container">
-        <div class="logo"></div>
+        <div class="logo">
+            <img src="Bio27_idea1.1.JPG" alt="Biology27 Conference Logo">
+        </div>
         <h1>Biology27</h1>
         <div class="info">
             <div><span class="info-label">What:</span> Biology27 conference</div>
