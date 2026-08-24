@@ -6,86 +6,697 @@
     <title>Biology27 Conference</title>
 
     <style>
+        :root {
+            --blue-dark: #0f6a7d;
+            --blue: #1a8fa8;
+            --blue-light: #2ba5c4;
+            --blue-pale: #eaf6f9;
+            --ink: #1c2b30;
+            --muted: #5b7075;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: Garamond, Georgia, serif;
-            background: linear-gradient(135deg, #1a8fa8 0%, #2ba5c4 100%);
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
+            color: var(--ink);
+            background: #fff;
         }
 
-        .container {
-            text-align: center;
+        a {
+            color: inherit;
+        }
+
+        /* ---------- Nav ---------- */
+        header.nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
             background: rgba(255, 255, 255, 0.95);
-            padding: 60px 40px;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            max-width: 500px;
+            border-bottom: 1px solid #d8ecf1;
+            backdrop-filter: blur(6px);
         }
 
-        .logo {
-            width: 200px;
-            height: auto;
-            margin: 0 auto 30px;
+        .nav-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 24px;
         }
 
-        .logo img {
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            font-size: 1.3em;
+            color: var(--blue-dark);
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .nav-logo img {
+            height: 34px;
+            width: auto;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 28px;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--blue-dark);
+            font-size: 0.95em;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .nav-links a:hover {
+            color: var(--blue-light);
+        }
+
+        /* ---------- Hero ---------- */
+        .hero {
+            background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue-light) 100%);
+            color: #fff;
+            text-align: center;
+            padding: 90px 20px 100px;
+        }
+
+        .hero .logo {
+            width: 180px;
+            margin: 0 auto 24px;
+            background: #fff;
+            border-radius: 16px;
+            padding: 10px;
+        }
+
+        .hero .logo img {
             width: 100%;
-            height: auto;
             display: block;
         }
 
-        h1 {
-            font-size: 3em;
-            color: #1a8fa8;
-            margin-bottom: 40px;
+        .hero h1 {
+            font-size: 3.2em;
             font-weight: 700;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
         }
 
-        .info {
-            font-size: 1.5em;
-            color: #333;
-            line-height: 1.8;
+        .hero .subtitle {
+            margin-top: 18px;
+            font-size: 1.4em;
+            font-weight: 400;
+        }
+
+        .hero .meta {
+            margin-top: 26px;
+            font-size: 1.1em;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .hero .meta span {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 8px 18px;
+            border-radius: 30px;
+        }
+
+        .hero .cta {
+            margin-top: 36px;
+            display: inline-block;
+            background: #fff;
+            color: var(--blue-dark);
+            padding: 14px 36px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        /* ---------- Sections ---------- */
+        section {
+            padding: 70px 24px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        section.alt {
+            background: var(--blue-pale);
+            max-width: none;
+        }
+
+        section.alt > .inner {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        h2.section-title {
+            font-size: 2.2em;
+            color: var(--blue-dark);
+            text-align: center;
             margin-bottom: 10px;
         }
 
-        .info-label {
-            font-weight: 700;
-            color: #1a8fa8;
+        .section-kicker {
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--blue-light);
+            font-size: 0.9em;
+            margin-bottom: 8px;
         }
 
-        .tagline {
-            font-size: 1.8em;
-            color: #1a8fa8;
-            margin-top: 40px;
+        .section-lead {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            color: var(--muted);
+            font-size: 1.15em;
+            line-height: 1.7;
+        }
+
+        /* ---------- Cards / grids ---------- */
+        .grid {
+            display: grid;
+            gap: 24px;
+        }
+
+        .grid-3 {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .grid-4 {
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        @media (max-width: 800px) {
+            .grid-3, .grid-4 {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .grid-3, .grid-4 {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .card {
+            background: #fff;
+            border: 1px solid #d8ecf1;
+            border-radius: 14px;
+            padding: 24px;
+            text-align: center;
+        }
+
+        .card .avatar {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            background: var(--blue-pale);
+            border: 2px dashed var(--blue-light);
+            margin: 0 auto 16px;
+        }
+
+        .card h3 {
+            color: var(--blue-dark);
+            font-size: 1.15em;
+            margin-bottom: 4px;
+        }
+
+        .card p {
+            color: var(--muted);
+            font-size: 0.95em;
+        }
+
+        /* ---------- Timeline (important dates) ---------- */
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            max-width: 640px;
+            margin: 0 auto;
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 20px;
+            align-items: baseline;
+            border-bottom: 1px dashed #cfe8ee;
+            padding-bottom: 14px;
+        }
+
+        .timeline-item .date {
+            min-width: 160px;
             font-weight: 700;
+            color: var(--blue);
+        }
+
+        .timeline-item .desc {
+            color: var(--muted);
+        }
+
+        /* ---------- Programme table ---------- */
+        .programme-day {
+            margin-bottom: 40px;
+        }
+
+        .programme-day h3 {
+            color: var(--blue-dark);
+            font-size: 1.4em;
+            margin-bottom: 16px;
+            border-left: 4px solid var(--blue-light);
+            padding-left: 12px;
+        }
+
+        table.programme {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table.programme th, table.programme td {
+            text-align: left;
+            padding: 12px 14px;
+            border-bottom: 1px solid #e4f1f4;
+        }
+
+        table.programme th {
+            color: var(--blue-dark);
+            text-transform: uppercase;
+            font-size: 0.85em;
+            letter-spacing: 1px;
+        }
+
+        table.programme td.time {
+            width: 120px;
+            color: var(--blue);
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        /* ---------- Venue ---------- */
+        .venue {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        @media (max-width: 800px) {
+            .venue {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .venue .map-placeholder {
+            background: var(--blue-pale);
+            border: 2px dashed var(--blue-light);
+            border-radius: 14px;
+            aspect-ratio: 4 / 3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--blue-light);
+            font-style: italic;
+        }
+
+        .venue h3 {
+            color: var(--blue-dark);
+            font-size: 1.4em;
+            margin-bottom: 12px;
+        }
+
+        .venue p {
+            color: var(--muted);
+            line-height: 1.7;
+            margin-bottom: 10px;
+        }
+
+        /* ---------- Registration pricing ---------- */
+        .pricing {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        @media (max-width: 800px) {
+            .pricing {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .price-card {
+            background: #fff;
+            border: 1px solid #d8ecf1;
+            border-radius: 14px;
+            padding: 30px 24px;
+            text-align: center;
+        }
+
+        .price-card.featured {
+            border-color: var(--blue);
+            box-shadow: 0 10px 30px rgba(26, 143, 168, 0.15);
+            transform: translateY(-6px);
+        }
+
+        .price-card h3 {
+            color: var(--blue-dark);
+            margin-bottom: 6px;
+        }
+
+        .price-card .price {
+            font-size: 2em;
+            color: var(--blue);
+            font-weight: 700;
+            margin: 14px 0;
+        }
+
+        .price-card ul {
+            list-style: none;
+            color: var(--muted);
+            text-align: left;
+            margin-top: 14px;
+        }
+
+        .price-card ul li {
+            padding: 6px 0;
+            border-bottom: 1px dashed #e4f1f4;
+        }
+
+        /* ---------- Sponsors ---------- */
+        .sponsor-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+            justify-content: center;
+        }
+
+        .sponsor-slot {
+            width: 160px;
+            height: 90px;
+            border: 2px dashed #cfe8ee;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--blue-light);
+            font-size: 0.85em;
+        }
+
+        /* ---------- Footer ---------- */
+        footer {
+            background: var(--blue-dark);
+            color: #fff;
+            text-align: center;
+            padding: 40px 24px;
+        }
+
+        footer .foot-links {
+            margin-top: 14px;
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        footer a {
+            text-decoration: none;
+            color: #dff3f8;
+        }
+
+        footer .fine {
+            margin-top: 20px;
+            color: #a9d4de;
+            font-size: 0.85em;
         }
     </style>
 </head>
 <body>
-    <div class="container">
+
+    <header class="nav">
+        <div class="nav-inner">
+            <a class="nav-logo" href="#top">
+                <img src="Bio27_idea1.1.JPG" alt="Biology27 logo">
+                Biology27
+            </a>
+            <ul class="nav-links">
+                <li><a href="#info">Info</a></li>
+                <li><a href="#speakers">Speakers</a></li>
+                <li><a href="#programme">Programme</a></li>
+                <li><a href="#venue">Venue</a></li>
+                <li><a href="#register">Register</a></li>
+                <li><a href="#sponsors">Sponsors</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="hero" id="top">
         <div class="logo">
             <img src="Bio27_idea1.1.JPG" alt="Biology27 Conference Logo">
         </div>
-
         <h1>Biology27</h1>
-
-        <div class="info">
-            <div><span class="info-label">What:</span> Biology27 Conference</div>
-            <div><span class="info-label">Where:</span> Bern</div>
-            <div><span class="info-label">When:</span> 18–19 February 2027</div>
+        <div class="subtitle">The annual joint meeting of Swiss organismic biology</div>
+        <div class="meta">
+            <span>📍 Bern</span>
+            <span>📅 18–19 February 2027</span>
         </div>
+        <a class="cta" href="#register">Registration opening soon</a>
+    </section>
 
-        <div class="tagline">Stay tuned!</div>
-    </div>
+    <section id="info">
+        <div class="section-kicker">About the conference</div>
+        <h2 class="section-title">What is Biology27?</h2>
+        <p class="section-lead">
+            [Placeholder] A short description of the conference goes here — what it is, which
+            Swiss scientific societies it brings together, who should attend, and why it
+            matters. Replace this paragraph with the real introduction.
+        </p>
+        <div class="grid grid-3">
+            <div class="card">
+                <h3>Talks &amp; Posters</h3>
+                <p>[Placeholder] Description of the talk and poster sessions on offer.</p>
+            </div>
+            <div class="card">
+                <h3>Keynote Speakers</h3>
+                <p>[Placeholder] Short teaser about the invited keynote speakers.</p>
+            </div>
+            <div class="card">
+                <h3>Networking</h3>
+                <p>[Placeholder] Description of the social programme / networking event.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="alt" id="speakers">
+        <div class="inner">
+            <div class="section-kicker">Keynotes</div>
+            <h2 class="section-title">Speakers</h2>
+            <p class="section-lead">[Placeholder] Introductory line about this year's invited speakers.</p>
+            <div class="grid grid-4">
+                <div class="card">
+                    <div class="avatar"></div>
+                    <h3>Speaker Name</h3>
+                    <p>Institution, Country</p>
+                </div>
+                <div class="card">
+                    <div class="avatar"></div>
+                    <h3>Speaker Name</h3>
+                    <p>Institution, Country</p>
+                </div>
+                <div class="card">
+                    <div class="avatar"></div>
+                    <h3>Speaker Name</h3>
+                    <p>Institution, Country</p>
+                </div>
+                <div class="card">
+                    <div class="avatar"></div>
+                    <h3>Speaker Name</h3>
+                    <p>Institution, Country</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="dates">
+        <div class="section-kicker">Don't miss out</div>
+        <h2 class="section-title">Important Dates</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="date">[TBD]</div>
+                <div class="desc">Abstract submission opens</div>
+            </div>
+            <div class="timeline-item">
+                <div class="date">[TBD]</div>
+                <div class="desc">Abstract submission deadline</div>
+            </div>
+            <div class="timeline-item">
+                <div class="date">[TBD]</div>
+                <div class="desc">Registration opens</div>
+            </div>
+            <div class="timeline-item">
+                <div class="date">[TBD]</div>
+                <div class="desc">Early-bird registration deadline</div>
+            </div>
+            <div class="timeline-item">
+                <div class="date">18–19 February 2027</div>
+                <div class="desc">Biology27 Conference, Bern</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="alt" id="programme">
+        <div class="inner">
+            <div class="section-kicker">Schedule</div>
+            <h2 class="section-title">Programme</h2>
+            <p class="section-lead">[Placeholder] Full programme to be announced closer to the conference.</p>
+
+            <div class="programme-day">
+                <h3>Day 1 — 18 February 2027</h3>
+                <table class="programme">
+                    <thead>
+                        <tr><th class="time">Time</th><th>Session</th><th>Room</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="time">[TBD]</td><td>Registration &amp; welcome coffee</td><td>[TBD]</td></tr>
+                        <tr><td class="time">[TBD]</td><td>Opening remarks</td><td>[TBD]</td></tr>
+                        <tr><td class="time">[TBD]</td><td>Keynote talk</td><td>[TBD]</td></tr>
+                        <tr><td class="time">[TBD]</td><td>Parallel talk sessions</td><td>[TBD]</td></tr>
+                        <tr><td class="time">[TBD]</td><td>Poster session</td><td>[TBD]</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="programme-day">
+                <h3>Day 2 — 19 February 2027</h3>
+                <table class="programme">
+                    <thead>
+                        <tr><th class="time">Time</th><th>Session</th><th>Room</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="time">[TBD]</td><td>Keynote talk</td><td>[TBD]</td></tr>
+                        <tr><td class="time">[TBD]</td><td>Parallel talk sessions</td><td>[TBD]</td></tr>
+                        <tr><td class="time">[TBD]</td><td>Awards &amp; closing remarks</td><td>[TBD]</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section id="venue">
+        <div class="section-kicker">Location</div>
+        <h2 class="section-title">Venue</h2>
+        <div class="venue">
+            <div class="map-placeholder">Map / venue photo placeholder</div>
+            <div>
+                <h3>[Building name], University of Bern</h3>
+                <p>[Placeholder] Street address, postal code, Bern, Switzerland.</p>
+                <p>[Placeholder] Directions from the train station and nearest public transport stop.</p>
+                <p>[Placeholder] Notes on parking, accessibility, and nearby accommodation.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="alt" id="register">
+        <div class="inner">
+            <div class="section-kicker">Join us</div>
+            <h2 class="section-title">Registration</h2>
+            <p class="section-lead">[Placeholder] Registration will open in [Month Year]. Pricing shown below is illustrative.</p>
+            <div class="pricing">
+                <div class="price-card">
+                    <h3>Student</h3>
+                    <div class="price">CHF [TBD]</div>
+                    <ul>
+                        <li>Access to all sessions</li>
+                        <li>Conference materials</li>
+                        <li>Coffee breaks &amp; lunches</li>
+                    </ul>
+                </div>
+                <div class="price-card featured">
+                    <h3>Member</h3>
+                    <div class="price">CHF [TBD]</div>
+                    <ul>
+                        <li>Everything in Student</li>
+                        <li>Conference dinner</li>
+                        <li>Society member discount</li>
+                    </ul>
+                </div>
+                <div class="price-card">
+                    <h3>Non-member</h3>
+                    <div class="price">CHF [TBD]</div>
+                    <ul>
+                        <li>Everything in Member</li>
+                        <li>Standard rate</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="committee">
+        <div class="section-kicker">Organisation</div>
+        <h2 class="section-title">Organising Committee</h2>
+        <div class="grid grid-4">
+            <div class="card">
+                <div class="avatar"></div>
+                <h3>Name</h3>
+                <p>Role, Institution</p>
+            </div>
+            <div class="card">
+                <div class="avatar"></div>
+                <h3>Name</h3>
+                <p>Role, Institution</p>
+            </div>
+            <div class="card">
+                <div class="avatar"></div>
+                <h3>Name</h3>
+                <p>Role, Institution</p>
+            </div>
+            <div class="card">
+                <div class="avatar"></div>
+                <h3>Name</h3>
+                <p>Role, Institution</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="alt" id="sponsors">
+        <div class="inner">
+            <div class="section-kicker">Thank you</div>
+            <h2 class="section-title">Sponsors</h2>
+            <div class="sponsor-grid">
+                <div class="sponsor-slot">Sponsor logo</div>
+                <div class="sponsor-slot">Sponsor logo</div>
+                <div class="sponsor-slot">Sponsor logo</div>
+                <div class="sponsor-slot">Sponsor logo</div>
+                <div class="sponsor-slot">Sponsor logo</div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div>Biology27 &middot; Bern &middot; 18–19 February 2027</div>
+        <div class="foot-links">
+            <a href="mailto:info@biology27.ch">info@biology27.ch</a>
+            <a href="#top">Back to top</a>
+        </div>
+        <div class="fine">&copy; 2026 Biology27 Conference. Site under construction — stay tuned.</div>
+    </footer>
+
 </body>
 </html>
