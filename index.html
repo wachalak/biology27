@@ -120,7 +120,7 @@
         }
 
         .hero .artwork {
-            width: min(92vw, 460px);
+            width: min(92vw, 680px);
             margin: 0 auto;
             background: #fff;
             border-radius: 18px;
@@ -444,15 +444,23 @@
         }
 
         .sponsor-slot {
-            width: 160px;
-            height: 90px;
-            border: 2px dashed #cfe8ee;
+            width: 200px;
+            height: 120px;
+            background: #fff;
+            border: 1px solid #d8ecf1;
             border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
+            padding: 20px;
             color: var(--blue-light);
             font-size: 0.85em;
+        }
+
+        .sponsor-slot img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
         }
 
         /* ---------- Footer ---------- */
@@ -502,11 +510,10 @@
     </header>
 
     <section class="hero" id="top">
-        <div class="kicker">Swiss Conference of Organismic Biology</div>
         <div class="artwork">
             <img src="biology27-artwork.jpg" alt="Biology27 conference artwork: an illustrated river of life running from DNA and microorganisms through insects, birds and mammals to fish and a turtle">
         </div>
-        <div class="subtitle">The annual joint meeting of Swiss organismic biology</div>
+        <div class="subtitle">The largest conference of organismic biology in Switzerland</div>
         <div class="meta">
             <span>📍 Bern</span>
             <span>📅 18–19 February 2027</span>
@@ -748,11 +755,18 @@
             <div class="section-kicker">Thank you</div>
             <h2 class="section-title">Sponsors</h2>
             <div class="sponsor-grid">
-                <div class="sponsor-slot">Sponsor logo</div>
-                <div class="sponsor-slot">Sponsor logo</div>
-                <div class="sponsor-slot">Sponsor logo</div>
-                <div class="sponsor-slot">Sponsor logo</div>
-                <div class="sponsor-slot">Sponsor logo</div>
+                <div class="sponsor-slot">
+                    <img src="sponsors/SCNAT.png" alt="SCNAT">
+                </div>
+                <div class="sponsor-slot">
+                    <img src="sponsors/Swiss_Botanical_Society.jpg" alt="Swiss Botanical Society">
+                </div>
+                <div class="sponsor-slot">
+                    <img src="sponsors/Swiss_Systematics_Society.png" alt="Swiss Systematics Society">
+                </div>
+                <div class="sponsor-slot">
+                    <img src="sponsors/Swiss_Zoological_Society.jpg" alt="Swiss Zoological Society">
+                </div>
             </div>
         </div>
     </section>
