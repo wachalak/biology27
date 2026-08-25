@@ -223,6 +223,10 @@
             grid-template-columns: repeat(4, 1fr);
         }
 
+        #speakers-grid {
+            grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+        }
+
         @media (max-width: 800px) {
             .grid-3, .grid-4 {
                 grid-template-columns: 1fr 1fr;
@@ -250,6 +254,12 @@
             background: var(--blue-pale);
             border: 2px dashed var(--blue-light);
             margin: 0 auto 16px;
+        }
+
+        .card img.avatar {
+            border: none;
+            object-fit: cover;
+            display: block;
         }
 
         .card h3 {
@@ -523,26 +533,31 @@
             <div class="section-kicker">Keynotes</div>
             <h2 class="section-title">Speakers</h2>
             <p class="section-lead">[Placeholder] Introductory line about this year's invited speakers.</p>
-            <div class="grid grid-4">
+            <div class="grid" id="speakers-grid">
                 <div class="card">
-                    <div class="avatar"></div>
-                    <h3>Speaker Name</h3>
-                    <p>Institution, Country</p>
+                    <img class="avatar" src="speakers/Anna_Traveset.jpg" alt="Anna Traveset">
+                    <h3>Anna Traveset</h3>
+                    <p>[Institution]</p>
                 </div>
                 <div class="card">
-                    <div class="avatar"></div>
-                    <h3>Speaker Name</h3>
-                    <p>Institution, Country</p>
+                    <img class="avatar" src="speakers/Julia_Kemppinen.webp" alt="Julia Kemppinen">
+                    <h3>Julia Kemppinen</h3>
+                    <p>[Institution]</p>
                 </div>
                 <div class="card">
-                    <div class="avatar"></div>
-                    <h3>Speaker Name</h3>
-                    <p>Institution, Country</p>
+                    <img class="avatar" src="speakers/Loic_D'Orangeville.jpg" alt="Loïc D'Orangeville">
+                    <h3>Loïc D'Orangeville</h3>
+                    <p>[Institution]</p>
                 </div>
                 <div class="card">
-                    <div class="avatar"></div>
-                    <h3>Speaker Name</h3>
-                    <p>Institution, Country</p>
+                    <img class="avatar" src="speakers/Manon_Schweinfurh.jpg" alt="Manon Schweinfurth">
+                    <h3>Manon Schweinfurth</h3>
+                    <p>[Institution]</p>
+                </div>
+                <div class="card">
+                    <img class="avatar" src="speakers/Tim_Coulson.jpg" alt="Tim Coulson">
+                    <h3>Tim Coulson</h3>
+                    <p>[Institution]</p>
                 </div>
             </div>
         </div>
