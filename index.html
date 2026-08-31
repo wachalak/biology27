@@ -355,6 +355,16 @@
             white-space: nowrap;
         }
 
+        table.programme td a {
+            color: var(--blue-dark);
+            text-decoration: underline;
+            font-weight: 700;
+        }
+
+        table.programme td a:hover {
+            color: var(--blue);
+        }
+
         /* ---------- Venue ---------- */
         .venue {
             display: grid;
@@ -381,10 +391,41 @@
             font-style: italic;
         }
 
+        .venue .map-image {
+            background: #fff;
+            border: 1px solid #d8ecf1;
+            border-radius: 14px;
+            padding: 10px;
+            box-shadow: 0 10px 30px rgba(4, 40, 48, 0.12);
+        }
+
+        .venue .map-image img {
+            width: 100%;
+            display: block;
+            border-radius: 6px;
+        }
+
+        .venue .map-caption {
+            margin-top: 10px;
+            font-size: 0.85em;
+            color: var(--muted);
+            text-align: center;
+        }
+
         .venue h3 {
             color: var(--blue-dark);
             font-size: 1.4em;
             margin-bottom: 12px;
+        }
+
+        .venue p a {
+            color: var(--blue);
+            text-decoration: underline;
+            font-weight: 700;
+        }
+
+        .venue p a:hover {
+            color: var(--blue-dark);
         }
 
         .venue p {
@@ -395,15 +436,14 @@
 
         /* ---------- Registration pricing ---------- */
         .pricing {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
             gap: 24px;
         }
 
-        @media (max-width: 800px) {
-            .pricing {
-                grid-template-columns: 1fr;
-            }
+        .pricing .price-card {
+            flex: 0 1 300px;
         }
 
         .price-card {
@@ -571,7 +611,7 @@
                 <div class="card">
                     <img class="avatar" src="speakers/Loic_D'Orangeville.jpg" alt="Loïc D'Orangeville">
                     <h3><a href="https://www.dorangevillelab.ca/" target="_blank" rel="noopener">Loïc D'Orangeville</a></h3>
-                    <p>University Leval, Canada​</p>
+                    <p>Université Laval, Canada​</p>
                 </div>
                 <div class="card">
                     <img class="avatar" src="speakers/Manon_Schweinfurh.jpg" alt="Manon Schweinfurth">
@@ -618,36 +658,50 @@
         <div class="inner">
             <div class="section-kicker">Schedule</div>
             <h2 class="section-title">Programme</h2>
-            <p class="section-lead">[Placeholder] Full programme to be announced closer to the conference.</p>
+            <p class="section-lead">Provisional schedule — subject to change.</p>
 
             <div class="programme-day">
-                <h3>Day 1 — 18 February 2027</h3>
+                <h3>Thursday, 18 February 2027</h3>
                 <table class="programme">
                     <thead>
                         <tr><th class="time">Time</th><th>Session</th><th>Room</th></tr>
                     </thead>
                     <tbody>
-                        <tr><td class="time">[TBD]</td><td>Registration &amp; welcome coffee</td><td>[TBD]</td></tr>
-                        <tr><td class="time">[TBD]</td><td>Opening remarks</td><td>[TBD]</td></tr>
-                        <tr><td class="time">[TBD]</td><td>Keynote talk</td><td>[TBD]</td></tr>
-                        <tr><td class="time">[TBD]</td><td>Parallel talk sessions</td><td>[TBD]</td></tr>
-                        <tr><td class="time">[TBD]</td><td>Poster session</td><td>[TBD]</td></tr>
+                        <tr><td class="time">8:00–9:00</td><td>Registration</td><td>[TBD]</td></tr>
+                        <tr><td class="time">9:00–10:00</td><td>Plenary 1 — <a href="https://researchportal.helsinki.fi/en/persons/julia-kemppinen/" target="_blank" rel="noopener">Julia Kemppinen</a> (University of Helsinki)</td><td>Plenary Room</td></tr>
+                        <tr><td class="time">10:00–10:30</td><td>Coffee break</td><td>[TBD]</td></tr>
+                        <tr><td class="time">10:30–12:00</td><td>Parallel Sessions 1, 2 &amp; 3</td><td>Plenary Room + Adjacent Rooms</td></tr>
+                        <tr><td class="time">12:00–13:30</td><td>Lunch break</td><td>[TBD]</td></tr>
+                        <tr><td class="time">13:30–14:00</td><td>Swiss Zoological Society Prize &amp; Prize Talk</td><td>Plenary Room</td></tr>
+                        <tr><td class="time">14:00–15:00</td><td>Plenary 2 — <a href="https://www.dorangevillelab.ca/" target="_blank" rel="noopener">Loïc D'Orangeville</a> (Université Laval)</td><td>Plenary Room</td></tr>
+                        <tr><td class="time">15:00–15:30</td><td>Coffee break</td><td>[TBD]</td></tr>
+                        <tr><td class="time">15:30–17:00</td><td>Parallel Sessions 1, 2 &amp; 3</td><td>Plenary Room + Adjacent Rooms</td></tr>
+                        <tr><td class="time">17:00–18:00</td><td>Poster Session 1 &amp; Apéro</td><td>[TBD]</td></tr>
+                        <tr><td class="time">18:30–00:00</td><td>Darwin Lecture &amp; Dinner — <a href="https://www.biology.ox.ac.uk/people/tim-coulson" target="_blank" rel="noopener">Tim Coulson</a> (University of Oxford)</td><td>[TBD]</td></tr>
                     </tbody>
                 </table>
+                <p class="section-lead" style="margin-top:16px; font-size:0.95em;">Industry and outreach events run throughout the day in the Main Hall.</p>
             </div>
 
             <div class="programme-day">
-                <h3>Day 2 — 19 February 2027</h3>
+                <h3>Friday, 19 February 2027</h3>
                 <table class="programme">
                     <thead>
                         <tr><th class="time">Time</th><th>Session</th><th>Room</th></tr>
                     </thead>
                     <tbody>
-                        <tr><td class="time">[TBD]</td><td>Keynote talk</td><td>[TBD]</td></tr>
-                        <tr><td class="time">[TBD]</td><td>Parallel talk sessions</td><td>[TBD]</td></tr>
-                        <tr><td class="time">[TBD]</td><td>Awards &amp; closing remarks</td><td>[TBD]</td></tr>
+                        <tr><td class="time">8:00–9:00</td><td>Late registration</td><td>[TBD]</td></tr>
+                        <tr><td class="time">9:00–10:00</td><td>Plenary 3 — <a href="https://imedea.uib-csic.es/travesetlab/" target="_blank" rel="noopener">Anna Traveset</a> (Mediterranean Institute of Advanced Studies)</td><td>Plenary Room</td></tr>
+                        <tr><td class="time">10:00–10:30</td><td>Coffee break</td><td>[TBD]</td></tr>
+                        <tr><td class="time">10:30–12:00</td><td>Parallel Sessions 1, 2 &amp; 3</td><td>Plenary Room + Adjacent Rooms</td></tr>
+                        <tr><td class="time">12:00–13:30</td><td>Lunch break</td><td>[TBD]</td></tr>
+                        <tr><td class="time">13:30–14:30</td><td>Plenary 4 — <a href="https://www.cooperation-lab.net/" target="_blank" rel="noopener">Manon Schweinfurth</a> (University of St Andrews)</td><td>Plenary Room</td></tr>
+                        <tr><td class="time">14:30–15:30</td><td>Parallel Sessions 1, 2 &amp; 3</td><td>Plenary Room + Adjacent Rooms</td></tr>
+                        <tr><td class="time">15:30–16:30</td><td>Poster Session 2 &amp; coffee break</td><td>[TBD]</td></tr>
+                        <tr><td class="time">16:30–17:30</td><td>Closing ceremony — SCNAT's Schläfli Prize &amp; Talk, poster &amp; talk prizes, announcement of Biology28</td><td>[TBD]</td></tr>
                     </tbody>
                 </table>
+                <p class="section-lead" style="margin-top:16px; font-size:0.95em;">Industry and outreach events run throughout the day in the Main Hall.</p>
             </div>
         </div>
     </section>
@@ -656,11 +710,16 @@
         <div class="section-kicker">Location</div>
         <h2 class="section-title">Venue</h2>
         <div class="venue">
-            <div class="map-placeholder">Map / venue photo placeholder</div>
             <div>
-                <h3>[Building name], University of Bern</h3>
-                <p>[Placeholder] Street address, postal code, Bern, Switzerland.</p>
-                <p>[Placeholder] Directions from the train station and nearest public transport stop.</p>
+                <div class="map-image">
+                    <img src="venue-map.jpg" alt="Campus map showing the vonRoll University Centre on Fabrikstrasse, Bern">
+                </div>
+                <p class="map-caption">vonRoll University Centre (highlighted in red), between Fabrikstrasse and the Länggasse quarter</p>
+            </div>
+            <div>
+                <h3>vonRoll University Centre, Building 6</h3>
+                <p><a href="https://www.google.com/maps/search/?api=1&query=Fabrikstrasse+6,+3012+Bern,+Switzerland" target="_blank" rel="noopener">Fabrikstrasse 6, 3012 Bern, Switzerland</a></p>
+                <p>The venue sits right next to the Güterbahnhof PostBus stop (line 101), a short ride from Bern main station, and a ~15-minute walk through the Länggasse quarter. Tram line 20 (Länggasse stop) also passes nearby.</p>
                 <p>[Placeholder] Notes on parking, accessibility, and nearby accommodation.</p>
             </div>
         </div>
@@ -670,32 +729,26 @@
         <div class="inner">
             <div class="section-kicker">Join us</div>
             <h2 class="section-title">Registration</h2>
-            <p class="section-lead">[Placeholder] Registration will open in [Month Year]. Pricing shown below is illustrative.</p>
+            <p class="section-lead">[Placeholder] Registration will open in [Month Year]. The conference dinner is included in every registration — there is no option to sign up without it.</p>
             <div class="pricing">
                 <div class="price-card">
                     <h3>Student</h3>
-                    <div class="price">CHF [TBD]</div>
+                    <div class="price">CHF 160</div>
                     <ul>
                         <li>Access to all sessions</li>
                         <li>Conference materials</li>
                         <li>Coffee breaks &amp; lunches</li>
+                        <li>Darwin Lecture &amp; Conference Dinner</li>
                     </ul>
                 </div>
                 <div class="price-card featured">
-                    <h3>Member</h3>
-                    <div class="price">CHF [TBD]</div>
+                    <h3>Non-student</h3>
+                    <div class="price">CHF 190</div>
                     <ul>
-                        <li>Everything in Student</li>
-                        <li>Conference dinner</li>
-                        <li>Society member discount</li>
-                    </ul>
-                </div>
-                <div class="price-card">
-                    <h3>Non-member</h3>
-                    <div class="price">CHF [TBD]</div>
-                    <ul>
-                        <li>Everything in Member</li>
-                        <li>Standard rate</li>
+                        <li>Access to all sessions</li>
+                        <li>Conference materials</li>
+                        <li>Coffee breaks &amp; lunches</li>
+                        <li>Darwin Lecture &amp; Conference Dinner</li>
                     </ul>
                 </div>
             </div>
