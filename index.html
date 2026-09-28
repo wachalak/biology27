@@ -232,8 +232,19 @@
             grid-template-columns: repeat(4, 1fr);
         }
 
-        #speakers-grid, #committee-grid {
+        #speakers-grid {
             grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+        }
+
+        #committee-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        #committee-grid .card {
+            flex: 1 1 170px;
+            max-width: 200px;
         }
 
         @media (max-width: 800px) {
