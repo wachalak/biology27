@@ -303,6 +303,27 @@
             text-align: center;
         }
 
+        .card.feature-card {
+            background: rgba(8, 22, 27, 0.92);
+            border: 1px solid rgba(43, 165, 196, 0.35);
+            border-top: 4px solid var(--blue-light);
+            padding: 34px 24px;
+            box-shadow: 0 14px 34px rgba(4, 40, 48, 0.25);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .card.feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 44px rgba(4, 40, 48, 0.35);
+        }
+
+        .card.feature-card h3 {
+            color: #dff3f8;
+            font-size: 1.3em;
+            letter-spacing: 0.5px;
+            margin: 0;
+        }
+
         .card .avatar {
             width: 90px;
             height: 90px;
@@ -644,13 +665,13 @@
             Biology27 provides a platform for exchange between students, researchers and professors across Swiss scientific institutions, research groups and topic areas. It is also the annual joint meeting of the Swiss <a href="https://scnat.ch/en/uuid/i/a4c9aa14-a6bc-52dd-899d-901535a3865f-Schweizerische_Zoologische_Gesellschaft_SZG" target="_blank" rel="noopener">Zoological</a>, <a href="https://botanica-helvetica.ch/en" target="_blank" rel="noopener">Botanical</a>, and <a href="https://swiss-systematics.ch/en" target="_blank" rel="noopener">Systematics</a> societies.
         </p>
         <div class="grid grid-3">
-            <div class="card">
+            <div class="card feature-card">
                 <h3>Talks &amp; Posters</h3>
             </div>
-            <div class="card">
+            <div class="card feature-card">
                 <h3>Keynote Speakers</h3>
             </div>
-            <div class="card">
+            <div class="card feature-card">
                 <h3>Networking</h3>
             </div>
         </div>
@@ -705,10 +726,6 @@
             <div class="timeline-item">
                 <div class="date">[TBD]</div>
                 <div class="desc">Registration opens</div>
-            </div>
-            <div class="timeline-item">
-                <div class="date">[TBD]</div>
-                <div class="desc">Early-bird registration deadline</div>
             </div>
             <div class="timeline-item">
                 <div class="date">18–19 February 2027</div>
@@ -793,7 +810,7 @@
             <h2 class="section-title">Registration</h2>
             <p class="section-lead">Registration will open shortly. <a href="https://www.conftool.com/biology27/" target="_blank" rel="noopener">Abstract submission is already open!</a></p>
             <div class="pricing">
-                <div class="price-card">
+                <div class="price-card featured">
                     <h3>Student</h3>
                     <div class="price">CHF 150</div>
                     <div class="price-sub">CHF 135 for society members</div>
@@ -803,7 +820,7 @@
                         <li>Coffee breaks &amp; lunches</li>
                     </ul>
                 </div>
-                <div class="price-card featured">
+                <div class="price-card">
                     <h3>Non-student</h3>
                     <div class="price">CHF 190</div>
                     <div class="price-sub">CHF 175 for society members</div>
