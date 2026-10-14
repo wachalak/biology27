@@ -29,6 +29,7 @@
 
         html {
             scroll-behavior: smooth;
+            scroll-padding-top: 80px;
         }
 
         body {
@@ -51,12 +52,15 @@
 
         /* ---------- Nav ---------- */
         header.nav {
-            position: sticky;
+            position: fixed;
             top: 0;
+            left: 0;
+            right: 0;
             z-index: 100;
-            background: rgba(255, 255, 255, 0.95);
-            border-bottom: 1px solid #d8ecf1;
-            backdrop-filter: blur(6px);
+            background: rgba(8, 22, 27, 0.72);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
         }
 
         .nav-inner {
@@ -82,6 +86,9 @@
         .nav-logo img {
             height: 48px;
             width: auto;
+            /* black-on-white logo → white-on-dark, keep the blue line blue, drop the background */
+            filter: invert(1) hue-rotate(180deg);
+            mix-blend-mode: screen;
         }
 
         .nav-links {
@@ -93,7 +100,7 @@
 
         .nav-links a {
             text-decoration: none;
-            color: var(--blue-dark);
+            color: #dff3f8;
             font-size: 0.95em;
             letter-spacing: 0.5px;
             text-transform: uppercase;
@@ -103,12 +110,36 @@
             color: var(--blue-light);
         }
 
+        @media (max-width: 640px) {
+            .nav-inner {
+                padding: 10px 16px;
+                gap: 14px;
+            }
+
+            .nav-logo img {
+                height: 40px;
+            }
+
+            .nav-links {
+                flex: 1;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 8px 6px;
+                text-align: center;
+            }
+
+            .nav-links a {
+                font-size: 0.78em;
+                letter-spacing: 0.3px;
+            }
+        }
+
         /* ---------- Hero ---------- */
         .hero {
             background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue-light) 100%);
             color: #fff;
             text-align: center;
-            padding: 90px 20px 100px;
+            padding: 150px 20px 100px;
         }
 
         .hero .kicker {
